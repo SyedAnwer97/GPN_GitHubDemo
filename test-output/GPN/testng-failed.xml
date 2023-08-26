@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [GPN]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="GPN Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.GPN.TestCase.Testcase001">
+        <methods>
+          <include name="VisiblityOfHomeButton"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.GPN.TestCase.Testcase001 -->
+    </classes>
+  </test> <!-- GPN Test(failed) -->
+</suite> <!-- Failed suite [GPN] -->
