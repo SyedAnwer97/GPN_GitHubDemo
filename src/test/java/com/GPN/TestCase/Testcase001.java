@@ -4,12 +4,19 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import com.GPN.POM.GPN_HomePage;
+
+
 
 public class Testcase001 extends BassClass {
 	
 	@Test(priority = 0)
 	public void VisiblityOfHomeButton() throws IOException, InterruptedException {
-		System.out.println("The Statement is executed");
+		Thread.sleep(5000);
+		GPN_HomePage gpn_HomePage = new GPN_HomePage(driver);
+		gpn_HomePage.GPNSettingIcon();
+		Thread.sleep(2000);
+	
 	}
 
 	/*GPN_Toolbar toolbar = new GPN_Toolbar(driver);

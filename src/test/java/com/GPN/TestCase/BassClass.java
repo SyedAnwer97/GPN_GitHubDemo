@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -41,8 +42,6 @@ public class BassClass {
 		PropertyConfigurator.configure("log4j.properties");
 
 		if (br.equals("chrome")) {
-			// ChromeOptions co = new ChromeOptions();
-			// co.addArguments("--remote-allow-origins=*");
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
@@ -75,7 +74,7 @@ public class BassClass {
 		loginPage2.setOpPassWrd(readconfig.GetOpPassword());
 		loginPage2.ClickLoginBtn();
 		logger.info("The Operator Login is completed");
-
+		
 		Thread.sleep(1500);
 		String title = driver.getTitle();
 
@@ -83,16 +82,25 @@ public class BassClass {
 			logger.info("Landed In AlfaDOCK Home Page");
 			loginPage2.ClksftwareLib();
 			Thread.sleep(2000);
+			String ParentWindow  = driver.getWindowHandle();
 			loginPage2.ClkGPN();
 			logger.info("Passed the software lib and Opened the GPN");
 			Thread.sleep(2000);
-		}
-
+			
+			Set<String> windowhandles = driver.getWindowHandles();
+			if (windowhandles.size()>1) {
+				for (String string : windowhandles) {
+					if (!string.equals(ParentWindow)) {
+						driver.switchTo().window(string);
+					}
+				}
+			}
+			
 		else if (title.equals("SI Scheduler")) {
 			Thread.sleep(2000);
 			logger.info("Landed In GPN");
 		}
-
+	}
 	}
 
 	@DataProvider(name = "LoginData")
