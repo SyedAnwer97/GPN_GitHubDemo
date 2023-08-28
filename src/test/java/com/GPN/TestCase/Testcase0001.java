@@ -5,11 +5,36 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.GPN.POM.GPN_HomePage;
 import com.GPN.POM.GPN_Toolbar;
 
-public class Testcase001 extends BassClass {
 
-	GPN_Toolbar toolbar = new GPN_Toolbar(driver);
+
+public class Testcase0001 extends BassClass {
+	
+	@Test(priority = 0)
+	public void VisiblityOfHomeButton() throws IOException, InterruptedException {
+		Thread.sleep(5000);
+		GPN_HomePage gpn_HomePage = new GPN_HomePage(driver);
+		gpn_HomePage.GPNSettingIcon();
+		Thread.sleep(2000);
+	
+	}
+	
+	@Test(priority = 3)
+	public void VisiblityOfSearchbar() throws IOException {
+		String nameofcurmethod = new Throwable().getStackTrace()[0].getMethodName();
+		GPN_Toolbar toolbar = new GPN_Toolbar(driver);
+		boolean SearchbarDisplayed = toolbar.SearchBar.isDisplayed();
+		if (SearchbarDisplayed) {
+			Assert.assertTrue(true);
+		} else {
+			captureScreen(driver, nameofcurmethod);
+			Assert.assertTrue(false);
+		}
+	}
+
+	/*GPN_Toolbar toolbar = new GPN_Toolbar(driver);
 	
 	@Test(priority = 0)
 	public void VisiblityOfHomeButton() throws IOException, InterruptedException {
@@ -361,6 +386,6 @@ public class Testcase001 extends BassClass {
 			captureScreen(driver, nameofcurmethod);
 			Assert.assertTrue(false);
 		}
-	}
+	}*/
 
 }

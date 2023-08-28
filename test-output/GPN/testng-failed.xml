@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [GPN]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.GPN.Utilitys.Reporting"/>
+  </listeners>
   <test thread-count="5" name="GPN Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.GPN.TestCase.Testcase001">
         <methods>
+          <include name="VisiblityofProcessStatusFilter"/>
+          <include name="VisiblityOfFromDate"/>
+          <include name="VisiblityOfHomeButton"/>
+          <include name="VisiblityofExpandCollapseMO"/>
+          <include name="VisiblityofBulletinBoard"/>
+          <include name="setup"/>
+          <include name="VisiblityofGPN_Options"/>
+          <include name="VisiblityofAddBulletIn"/>
+          <include name="VisiblityofAI_Report"/>
+          <include name="VisiblityofDownlaodCSV"/>
+          <include name="VisiblityofPriority"/>
+          <include name="VisiblityOfBeepProcessMode"/>
+          <include name="VisiblityofAlfaDOCK_Setting"/>
+          <include name="VisiblityOfSearchButton"/>
+          <include name="VisiblityOfQRScanner"/>
+          <include name="VisiblityofDeleteMO"/>
+          <include name="VisiblityofAddMO"/>
+          <include name="VisiblityOfSearchbar"/>
+          <include name="VisiblityofSorting"/>
+          <include name="VisiblityOfAdvanceSearch"/>
+          <include name="VisiblityofShowHideCalaender"/>
+          <include name="VisiblityOfCancelSearch"/>
+          <include name="VisiblityOfDateFilter"/>
+          <include name="VisiblityOfToDate"/>
+          <include name="teardown"/>
+          <include name="VisiblityofView"/>
+          <include name="VisiblityofGPNModes"/>
+        </methods>
+      </class> <!-- com.GPN.TestCase.Testcase001 -->
+      <class name="com.GPN.TestCase.Testcase0001">
+        <methods>
+          <include name="VisiblityOfSearchbar"/>
           <include name="VisiblityOfHomeButton"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.GPN.TestCase.Testcase001 -->
+      </class> <!-- com.GPN.TestCase.Testcase0001 -->
     </classes>
   </test> <!-- GPN Test(failed) -->
 </suite> <!-- Failed suite [GPN] -->

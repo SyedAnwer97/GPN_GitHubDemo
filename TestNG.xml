@@ -3,13 +3,14 @@
 
 <suite name="GPN">
 
-	<!--<listeners>
-	<listener class-name="com.GPN.Utitlitys.Reporting"></listener>
-	</listeners>-->
+	<listeners>
+	<listener class-name="com.GPN.Utilitys.Reporting"></listener>
+	</listeners>
 
 	<test name="GPN Test">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="Firefox" />
 		<classes>
+			<class name="com.GPN.TestCase.Testcase0001"></class>
 			<class name="com.GPN.TestCase.Testcase001"></class>
 			<!--<class name="com.GPN.TestCase.Testcase002"></class>
 			<class name="com.GPN.TestCase.Testcase003"></class>
