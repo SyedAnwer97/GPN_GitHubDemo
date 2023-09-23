@@ -8,7 +8,7 @@
 	</listeners>
 
 	<test name="GPN Test">
-		<parameter name="browser" value="Firefox" />
+		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.GPN.TestCase.Testcase0001"></class>
 			<class name="com.GPN.TestCase.Testcase001"></class>
